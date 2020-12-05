@@ -16,5 +16,18 @@
   "bugs": {
     "url": "https://github.com/xweng49/react_website/issues"
   },
-  "homepage": "https://github.com/xweng49/react_website#readme"
+
+  "homepage": "https://github.com/xweng49/react_website#readme",
+  "dependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.2.1",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "parcel": "^1.12.4"
+  }
+
 }
