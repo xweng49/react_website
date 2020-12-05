@@ -346,6 +346,7 @@ dependencies = [
  "env_logger",
  "futures",
  "json",
+ "log",
  "serde",
  "serde_json",
  "tokio-test",
