@@ -73,6 +73,7 @@ async fn get_quotes(request: JsonValue) -> Result<Vec<Quote>, YahooError>{
     let provider = yahoo::YahooConnector::new();
     //TODO: get the quotes using the json info.
     let name = request["name"].clone().to_string();
+    info!("Name: {:?}", name);
     let date_start = request["date_start"].clone();
     let date_end = request["date_end"].clone();
     let (year_start, month_start, day_start) = process_date_ymd(date_start);
@@ -83,7 +84,7 @@ async fn get_quotes(request: JsonValue) -> Result<Vec<Quote>, YahooError>{
     // let start = Utc.ymd(2020, 1, 1).and_hms_milli(0, 0, 0, 0);
     // let end = Utc.ymd(2020, 1, 31).and_hms_milli(23, 59, 59, 999);
     // returns historic quotes with daily interval
-    let resp = tokio_test::block_on(provider.get_quote_history("AAPL", start, end));
+    let resp = tokio_test::block_on(provider.get_quote_history(&name, start, end));
     let quotes = resp.unwrap().quotes();
     let quote_vec = match quotes {
         Ok(string) => string,
