@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "parcel src/index.html --open",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -16,7 +17,6 @@
   "bugs": {
     "url": "https://github.com/xweng49/react_website/issues"
   },
-
   "homepage": "https://github.com/xweng49/react_website#readme",
   "dependencies": {
     "react": "^17.0.1",
@@ -29,5 +29,4 @@
     "babel-preset-react": "^6.24.1",
     "parcel": "^1.12.4"
   }
-
 }
