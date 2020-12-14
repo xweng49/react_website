@@ -79,6 +79,7 @@ async fn get_quotes(request: JsonValue) -> Result<Vec<Quote>, YahooError>{
     let (year_start, month_start, day_start) = process_date_ymd(date_start);
     let (year_end, month_end, day_end) = process_date_ymd(date_end);
 
+    //edge-case of same day.
     let start = Utc.ymd(year_start, month_start, day_start).and_hms_milli(0, 0, 0, 0);
     let end = Utc.ymd(year_end, month_end, day_end).and_hms_milli(23, 59, 59, 999);
     // let start = Utc.ymd(2020, 1, 1).and_hms_milli(0, 0, 0, 0);
