@@ -9,6 +9,12 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
+import {
+  Link,
+  Route,
+  NavLink,
+  HashRouter
+} from "react-router-dom"
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -60,13 +66,17 @@ function ButtonAppBar() {
                 open={Boolean(anchorEl)}
                 onClose={handleClose}
             >
-                <MenuItem onClick={handleClose}>Profile</MenuItem>
+                <MenuItem onClick={handleClose}><Link to="/components/graph">Profile</Link></MenuItem>
                 <MenuItem onClick={handleClose}>My account</MenuItem>
                 <MenuItem onClick={handleClose}>Logout</MenuItem>
             </Menu>
             <Typography variant="h6" className={classes.title}>
               React Website
             </Typography>
+            <Typography NavLink to="/stuff" variant="h6" className={classes.title}>
+              Stocks
+            </Typography>
+
             <Button color="inherit">Login</Button>
           </Toolbar>
         </AppBar>
